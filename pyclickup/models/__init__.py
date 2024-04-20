@@ -311,7 +311,7 @@ class Task(BaseModel):
     def update(
         self,
         name: str = None,  # string
-        content: str = None,  # string
+        description: str = None,  # string
         add_assignees: ListType[Union[int, User]] = None,
         remove_assignees: ListType[Union[int, User]] = None,
         status: str = None,  # string
@@ -335,8 +335,8 @@ class Task(BaseModel):
 
         if name:
             data["name"] = name
-        if content:
-            data["content"] = content
+        if description:
+            data["description"] = description
         if status:
             data["status"] = status
         if priority:
